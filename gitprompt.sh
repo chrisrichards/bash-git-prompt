@@ -7,20 +7,34 @@ fi
 # Reset
 ResetColor="\[\033[0m\]"       # Text Reset
 
+BOLD=$(tput bold)
+RESET=$(tput sgr0)
+SOLAR_YELLOW=$(tput setaf 136)
+SOLAR_ORANGE=$(tput setaf 166)
+SOLAR_RED=$(tput setaf 124)
+SOLAR_MAGENTA=$(tput setaf 125)
+SOLAR_VIOLET=$(tput setaf 61)
+SOLAR_BLUE=$(tput setaf 33)
+SOLAR_CYAN=$(tput setaf 37)
+SOLAR_GREEN=$(tput setaf 64)
+SOLAR_WHITE=$(tput setaf 254)
+
+
+
 # Regular Colors
-Red="\[\033[0;31m\]"          # Red
-Yellow="\[\033[0;33m\]"       # Yellow
-Blue="\[\033[0;34m\]"         # Blue
-WHITE='\[\033[37m\]'
+Red=$(tput setaf 124)
+Yellow=$(tput setaf 136)
+Blue=$(tput setaf 33)
+WHITE=$(tput setaf 254)
 
 # Bold
-BGreen="\[\033[1;32m\]"       # Green
+BGreen=$(tput setaf 64)
 
 # High Intensty
 IBlack="\[\033[0;90m\]"       # Black
 
 # Bold High Intensty
-Magenta="\[\033[1;95m\]"     # Purple
+Magenta=$(tput setaf 125)
 
 # Various variables you might want for your PS1 prompt instead
 Time12a="\@"
@@ -39,7 +53,7 @@ GIT_PROMPT_UNTRACKED="…"
 GIT_PROMPT_CLEAN="${BGreen}✔"
 
 PROMPT_START="$Yellow$PathShort$ResetColor"
-PROMPT_END=" \n$WHITE$Time12a$ResetColor $ "
+PROMPT_END=" \n$Time12a$ResetColor $ "
 
 
 function update_current_git_vars() {
